@@ -123,3 +123,80 @@ path 结构： <br>
     "message": "请求成功"
 }
 ```
+
+
+### 更新剪贴板
+
+#### Request
+
+| Method | URL                                      | Description |
+| :---: |------------------------------------------| --- |
+| `POST` | `https://pasteme.tyrantg.com/api/update` | 更新剪贴板 |
+
+##### Headers
+
+`Content-Type: application/json`
+
+##### Body
+
+###### Params
+
+| Name | Type | Description                          | Required |
+| :---: | :---: |--------------------------------------| :---: |
+| content | text | 剪贴板内容                                | Yes |
+| path | string | 剪贴板地址                                | Yes |
+| auth_code | string | 授权码                               | Yes |
+| refresh_code | int | 授权码刷新 0:不刷新，1:刷新  默认为0     | No |
+| refresh_password | int | 密码刷新 0:不刷新，1:刷新  默认为0  | No |
+
+###### Example
+
+```json
+{
+    "content": "寄",
+    "path": "1234567890123456@123456",
+    "auth_code": "$2y$12$2PVfgopS7HunyYKo8v8i1uzIOzxv0rvVcowDvEjRxWKtISfceZR42"
+}
+```
+
+or
+
+```json
+{
+    "content": "寄",
+    "path": "1234567890123456@123456",
+    "auth_code": "$2y$12$2PVfgopS7HunyYKo8v8i1uzIOzxv0rvVcowDvEjRxWKtISfceZR42",
+    "refresh_code": 1
+}
+```
+
+### Response
+
+#### Headers
+
+`Content-Type: application/json`
+
+#### Body
+
+##### Params
+
+|   Name    | Type | Description |
+|:---------:| :---: |----------|
+| password  | string | 密码       |
+|   path    | string | 文本地址     |
+| auth_code | string | 授权码         |
+
+##### Example
+
+```json
+{
+    "return_code": 0,
+    "result_code": "SUCCESS",
+    "data": {
+        "password": "9u1XWm",
+        "path": "kt9smknsvaricptg",
+        "auth_code": "$2y$12$YCY5xmiavxeXThF7GVQwt.VCPIXQIWaGtjgQHZoFydJoy/FObPcZn"
+    },
+    "message": "请求成功"
+}
+```
