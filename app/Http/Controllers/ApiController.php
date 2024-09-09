@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Interfaces\ResponseCode;
@@ -8,9 +7,6 @@ use Illuminate\Http\JsonResponse;
 
 class ApiController extends Controller implements ResponseCode
 {
-
-    protected $service;
-
     /**
      * 返回成功响应
      * @param mixed $data

@@ -7,12 +7,12 @@ use App\Http\FormRequest;
 
 class ContentCreate extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             'content' => ['required', 'string'],
@@ -24,11 +24,11 @@ class ContentCreate extends FormRequest
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'content.required' => '请填写内容',
-            'string.required' => '文本内容为字符串类型',
+            'content.string' => '文本内容为字符串类型',
             'password.string' => '密码为字符串类型',
             'password.min' => '密码最少为4个字符',
             'password.max' => '密码最多为80个字符',

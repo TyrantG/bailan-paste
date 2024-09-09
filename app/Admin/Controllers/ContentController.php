@@ -67,9 +67,19 @@ HTML;
             $grid->column('views', '浏览量');
             $grid->column('created_at')->sortable();
 
-            $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
+//            $grid->disableFilter();
+            $grid->disableCreateButton();
+            $grid->disableBatchActions();
+            $grid->disableEditButton();
+            $grid->disableDeleteButton();
 
+            $grid->filter(function (Grid\Filter $filter) {
+                $filter->expand();
+                $filter->panel();
+                $filter->like('content', '小程序名称')->width(4);
+                $filter->where('not_content', function ($query) {
+                    $query->where('content', 'not like', "%{$this->input}%");
+                }, '过滤小程序名称')->width(4);
             });
         });
     }

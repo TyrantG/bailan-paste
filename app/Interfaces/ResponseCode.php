@@ -11,6 +11,4 @@ interface ResponseCode
     const MODEL_NOT_FOUND                                   = [4004,    '数据未找到'];
     const T00_MANY_REQUESTS                                 = [4029,    '请求次数过多'];
     const SERVER_ERROR                                      = [5000,    '服务器错误'];
-
-
 }

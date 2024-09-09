@@ -67,10 +67,11 @@ or
 
 ##### Params
 
-| Name | Type | Description |
-| :---: | :---: | --- |
-| password | string | 密码 |
-| path | string | 文本地址 |
+|   Name    | Type | Description |
+|:---------:| :---: |----------|
+| password  | string | 密码       |
+|   path    | string | 文本地址     |
+| auth_code | string | 授权码         |
 
 ##### Example
 
@@ -80,7 +81,8 @@ or
     "result_code": "SUCCESS",
     "data": {
         "password": "9u1XWm",
-        "path": "kt9smknsvaricptg"
+        "path": "kt9smknsvaricptg",
+        "auth_code": "$2y$12$YCY5xmiavxeXThF7GVQwt.VCPIXQIWaGtjgQHZoFydJoy/FObPcZn"
     },
     "message": "请求成功"
 }
